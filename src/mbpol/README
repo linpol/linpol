@@ -1,0 +1,8 @@
+This mbpol was released on 22-Nov-2013
+
+1. Go to the mbpol subdirectory and build libmbpol.a [adjust the Makefile
+   as needed]; this is going to take some time and memory and produce
+   libmbpol.a
+
+2. Fortran/C++ linkage examples are in the corresponding sub-folders
+   (you may need to adjust the compiler flags).

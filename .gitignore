@@ -1,0 +1,9 @@
+*~
+*.o
+*.mod
+*.a
+*.pdf
+/linpolexe
+.*.swp
+.*.swo
+

@@ -1,0 +1,108 @@
+!*************************************************************************!
+!*** Disclaimer : The code provided "as is" - no representation is made **!
+!***               that it is suitable for any particular purpose       **!
+!*************************************************************************!
+
+Subroutine to calculate the energy and derivatives for a system of N water
+molecules with the TTM3-F interaction potetnial (version 3.0)
+
+Reference: Fanourgakis, G. S. and Xantheas, S. S.                     
+               in preparation
+
+
+**********************************************************
+  En_TTM3F(Nwater,R,der,Energy)
+
+where
+      "Nwater"   is the number of water molecules ,
+      "R"        are the coordinates of the atoms (in Angstrom),
+      "der"      are the corresponding derivatives (in kcal/mol/A),
+      "Energy"   is the energy (in kcal/mol)
+**********************************************************
+
+The subroutine is compilded using the command "make" which creates the 
+executable file "main.x"
+
+In the Makefile use either
+       "ifc" or "ifort" for the Inter pentium compiler or
+       "efc" for the Itanium processor compliler.
+      
+"main.f90" is the driver for the subroutine En_TTM3F which reads the
+configuration, allocates memory, defines the arrays etc. It also prints
+the results (energy, derivatives) 
+
+A sample input configuration called "input.xyz" is included.  After compiling,
+the code can be run by typing "main.x".  It will ask you for the name of the 
+input file.
+
+Using the existing input and Makefile the results should be:
+
+******************************************************
+> main.x
+ Enter configuration filename
+input.xyz
+ filename=input.xyz                                                             
+
+Energy (kcal/mol) =  -204.706407
+ 
+ ----------Derivatives (kcal/mol/A)  ---------------
+  1     -23.919076     -9.735962    -17.111582
+  2       0.807890    -21.464899     -8.680923
+  3       1.541241    -20.582802     -5.225148
+  4     -18.854403     -7.329542      8.223386
+  5       2.732616    -20.899336      7.738975
+  6      -5.303435    -14.574454    -15.206670
+  7      14.146333      1.541719     -9.590385
+  8      11.147901     10.143245     15.923982
+  9      -0.404450     21.489746     11.948613
+ 10       7.060886      6.979515     13.888087
+ 11      14.597996     12.304856     -9.582700
+ 12      -5.058741     -3.966010    -15.969112
+ 13      -1.035971      4.239704     21.234564
+ 14     -14.594853     -5.930482      6.613469
+ 15       2.647129     19.807475     -7.036772
+ 16       2.484927    -16.587682      4.320728
+ 17     -13.359626     -0.478982     16.847075
+ 18       3.995888     21.229606     -9.412687
+ 19      -3.046180     16.843021     -1.171175
+ 20      14.989211     14.003655    -10.635830
+ 21      -1.872004     18.541510      7.687797
+ 22      23.759675     -7.789224      9.636261
+ 23      -9.132927      5.196013     17.098568
+ 24       5.921521     15.617195     -8.522267
+ 25       6.468388     20.715682     -0.697134
+ 26      -8.815356     -0.219751      5.731475
+ 27       4.098269     13.941741    -14.424699
+ 28      14.803668     -3.953137      6.678896
+ 29     -14.301774      5.404964     -6.949815
+ 30      13.442054     15.283648     -2.727139
+ 31       9.285461      2.819406     -3.641016
+ 32      -3.590730     11.126628     18.330885
+ 33      -3.890505     -7.438347     14.770956
+ 34      -9.871448      8.040857     -3.636185
+ 35     -15.364745      4.426302     -4.804418
+ 36       3.985161    -17.184604    -10.231903
+ 37       8.731510     -4.345303    -17.219336
+ 38      -5.481706    -17.833914      7.171344
+ 39       5.943635     -9.927831    -11.764681
+ 40     -13.235637      0.846369     -1.424087
+ 41      -5.065175     -3.685302     -8.418957
+ 42      -9.905610     -8.337199     17.243746
+ 43      -5.605754     10.443079     12.552033
+ 44       9.247761     -8.212347      4.888313
+ 45       2.240143    -13.336669    -16.975765
+ 46      -1.732089      9.490672     -3.626082
+ 47       3.136214      8.786800    -13.599544
+ 48      11.282081     -0.560141      7.525371
+ 49       3.321927      1.112007      9.842933
+ 50      -5.246762    -20.845610     -2.511108
+ 51       9.275299     13.655687      2.120177
+ 52     -10.302206      3.089869     -8.345827
+ 53      10.119216      9.978246    -16.277459
+ 54       3.218472    -10.038330     -0.043083
+ 55      -3.798743     -2.817489     19.422344
+ 56       1.023889    -18.068890     -8.904162
+ 57      -9.224910    -14.107977     -2.003570
+ 58      12.822714     -3.195510      0.804316
+ 59      -7.896849    -16.430657     -8.145463
+ 60      -8.367411      2.779167     16.272391
