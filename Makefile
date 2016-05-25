@@ -55,7 +55,7 @@ MBPOLDIR := src/mbpol
 MBPOL_LIBS := $(MBPOLDIR)/mbpol/libmbpol.a
 SRCDIR := src/NEB_01 src/linpol src/TTM3-F
 SCRIPTSDIR=scripts
-EXTRAFILES = README.md LICENCE example
+EXTRAFILES = README.md LICENCE example data
 RELEASE=linpolexe_`date +%Y%m%d-%H%M%S`
 
 #---------------
