@@ -193,6 +193,8 @@ subroutine pes_vec_from_pes(this, v)
                 !       OB
 
                 !ADD HERE
+                case default
+                        stop "Internal error in pes selection."
         end select
 end subroutine
 
@@ -241,6 +243,8 @@ subroutine pes_vec_to_pes(this, v)
                 !       H4
 
                 !ADD HERE
+                case default
+                        stop "Internal error in pes selection."
         end select
 end subroutine
 
@@ -286,6 +290,8 @@ subroutine pes_atomvec_from_pes(this, v)
                 !       OB
 
                 !ADD HERE
+                case default
+                        stop "Internal error in pes selection."
         end select
 end subroutine
 
@@ -331,6 +337,8 @@ subroutine pes_atomvec_to_pes(this, v)
                 !       H4
                 
                 !ADD HERE
+                case default
+                        stop "Internal error in pes selection."
         end select
 end subroutine
 
@@ -390,6 +398,8 @@ subroutine pes_mat_from_pes(this, m)
                         m = tmp
                         deallocate( tmp )
                 !ADD HERE
+                case default
+                        stop "Internal error in pes selection."
         end select
 end subroutine
 
@@ -434,6 +444,8 @@ subroutine pes_mat_to_pes(this, m)
                         write(*,*) ''
                         stop 1
                 !ADD HERE
+                case default
+                        stop "Internal error in pes selection."
         end select
 end subroutine
 
@@ -458,6 +470,8 @@ subroutine pes_pot(this, x, pot)    !calculate potential
                         call calcpot(this%Nw,pot,xunit)
                         !Potential is returned in units of kcal/mol; these are converted below, to Ha
                 !ADD HERE
+                case default
+                        stop "Internal error in pes selection."
         end select
 
         !Backward transform units to Ha:
@@ -497,6 +511,8 @@ subroutine pes_grad(this, x, eps, grad)    !calculate gradient
                         !Note: no eps option, as gradient is exact
                         !Gradient is returned in units of kcal/mol/A; these are converted below
                 !ADD HERE
+                case default
+                        stop "Internal error in pes selection."
         end select
 
         !Backward transform units to Ha/bohr:
@@ -528,6 +544,8 @@ subroutine pes_pot_grad(this, x, eps, pot, grad)    !calculate gradient
                         !Potential is returned in units of kcal/mol; these are converted below, to Ha
                         !Gradient is returned in units of kcal/mol/A; these are converted below, to Ha/bohr
                 !ADD HERE
+                case default
+                        stop "Internal error in pes selection."
         end select
 
         !Backward transform units to Ha/bohr and Ha, respectively:
@@ -681,6 +699,8 @@ subroutine pes_hess(this, x, eps, hess)    !calculate hessian
                 case(PES_MBPOL)
                         call pes_five_point_stencil_hessian_from_potential(this, x, eps, hess)
                 !ADD HERE
+                case default
+                        stop "Internal error in pes selection."
         end select
 end subroutine
 
