@@ -55,7 +55,7 @@ MBPOLDIR := src/mbpol
 MBPOL_LIBS := $(MBPOLDIR)/mbpol/libmbpol.a
 SRCDIR := src/NEB_01 src/linpol src/TTM3-F
 SCRIPTSDIR=scripts
-EXTRAFILES = README.md LICENCE
+EXTRAFILES = README.md LICENCE example
 RELEASE=linpolexe_`date +%Y%m%d-%H%M%S`
 
 #---------------
@@ -96,5 +96,5 @@ clean:
 		cd $(MBPOLDIR)/mbpol && make clean
 
 release:
-	tar -cvzf release/$(RELEASE).tar.gz src $(SCRIPTSDIR) $(EXTRAFILES) \
+	tar -cvzf $(RELEASE).tar.gz src $(SCRIPTSDIR) $(EXTRAFILES) \
 		--exclude="*~"
