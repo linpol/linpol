@@ -83,13 +83,13 @@ OBJ := 	math.o smear.o ttm3f_mod.o mnasa_mod.o mnasa.o phys_const.o\
 %.o : %.f
 	$(FC) -c $(FFLAGS) $< 
 
-all : mbpol linpolexe
+all : linpolexe
 
 mbpol: 
 	cd $(MBPOLDIR)/mbpol && $(MAKE)
 
-linpolexe: $(OBJ) 
-	$(FC) -o $@ $^ $(FFLAGS) $(LIBS)
+linpolexe: mbpol $(OBJ) 
+	$(FC) -o $@ $(OBJ) $(FFLAGS) $(LIBS)
 
 clean:
 	rm -f *.o *.mod linpolexe *-log.txt; \

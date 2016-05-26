@@ -146,8 +146,8 @@ A study of such tables allows us to check for convergence of both $S_{kink}$ and
 are happy that this has occured, the tunnelling matrix element is found from the converged
 results ($\beta \hbar$ = 80,000 and $N$ = 4,096).
 
-## Scripts to help with the creation of such tables.
-In his master thesis Michael F. Herbst wrote a bunch of shell scripts which aid
+## Scripts to help with the creation of convergence tables.
+In his master thesis Michael Herbst wrote a bunch of shell scripts which aid
 with setting up the calculations neccessary for creating such tables.
 For easy tab completion these files all start with a ``0``. Help and a much more
 detailed description of there functionality is available by providing the ``-h``
@@ -171,8 +171,13 @@ A short description of the most important scripts:
 
 For more details about the computational strategies that lead to the
 development of these scripts, see his master thesis, which is available for
-download from [his blog]
+download from
+[http://blog.mfhs.eu/2013/08/10/master-thesis-tunnelling-in-water-clusters/]
 (http://blog.mfhs.eu/2013/08/10/master-thesis-tunnelling-in-water-clusters/).
+
+Feel free to cite his master thesis in case you find this work useful:
+- M. F. Herbst, "Instanton calculations of tunnelling in water clusters",
+    University of Cambridge (2013)
 
 ## Example input files
 These are contained in the ``example`` subdirectory. 

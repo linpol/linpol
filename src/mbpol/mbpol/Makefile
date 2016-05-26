@@ -5,10 +5,6 @@
 # Gcc:
 CXX = g++
 CXXFLAGS = -O2 #-fopenmp
-#
-# Clang:
-CXX = clang++
-CXXFLAGS = -O2 #-fopenmp
 
 AR = /usr/bin/ar
 
